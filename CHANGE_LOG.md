@@ -1,5 +1,14 @@
 # Solver Engines :: Change Log
 
+* 2016-1209: 3.0 (blowfishpro) for KSP 1.2.2
+	+ Update for KSP 1.2.2
+	+ Fix toolbar button not displaying
+	+ Fix thrust and drag displays in GUI
+	+ Fix fittable engines being fit every time even if they had no changes
+		- Breaking Change Refactor EngineThermodynamics to be a struct, which makes it easier to use without adding GC alloc
+	+ Fix issue with negative mach transformations
+		- Breaking Change Streamline engine fitting code
+	+ Only save fitted engine when parsing prefab, this prevents part upgrades from affecting the cache (however, upgraded parts will have to be fit every time)
 * 2016-0706: 2.3 (blowfishpro) for KSP 1.1.3
 	+ Revert and freeze AssemblyVersion to fix compatibility issues
 * 2016-0701: 2.2 (blowfishpro) for KSP 1.1.3

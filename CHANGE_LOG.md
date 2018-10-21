@@ -1,5 +1,7 @@
 # Solver Engines :: Change Log
 
+* 2015-0909: 1.11 (NathanKell) for KSP 1.0.4.
+	+ Make heat production quadratic with throttle rather than linear.
 * 2015-0827: 1.10 (NathanKell) for KSP 1.0.4.
 	+ Fix some NREs.
 	+ Fix flickering of FX on burnout.

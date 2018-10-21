@@ -1,5 +1,14 @@
 # Solver Engines :: Change Log
 
+* 2018-0302: 3.5 (blowfishpro) for KSP 1.3.1
+	+ Engine modules now support `THRUST_TRANSFORM` nodes to allow thrust transforms with multiple names
+		- If present, these will overwrite any other thrust transform setup
+		- Any number of these nodes can exist on the engine module
+		- They have the following fields
+			- `name`: name of the transforms(s) to be used (required)
+			- `overallMultiplier`: thrust multiplier applied to all transforms with this name (optional)
+			- `multiplier`: multiplier applied to individual transforms, there can be either 0, 1, or n multipliers, where n is the number of thrust transforms with this name
+				- If there is 1 `multiplier` then it will be multiplied into `overallMultiplier`
 * 2017-1023: 3.4 (blowfishpro) for KSP 1.3.1
 	+ Recompile for KSP 1.3.1
 * 2017-0731: 3.3 (blowfishpro) for KSP 1.3

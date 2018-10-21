@@ -1,5 +1,8 @@
 # Solver Engines :: Change Log
 
+* 2015-1215: 1.14 (blowfishpro) for KSP 1.0.4.
+	+ Minor refactor of engine fitting
+	+ Get rid of debug spam in non Kerbin/Earth atmospheres
 * 2015-1119: 1.13 (NathanKell) for KSP 1.0.4.
 	+ Respect the Ignore Max Temp cheat.
 * 2015-1116: 1.12 (blowfishpro) for KSP 1.0.4.

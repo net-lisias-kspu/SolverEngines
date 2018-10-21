@@ -1,5 +1,9 @@
 # Solver Engines :: Change Log
 
+* 2016-0427: 2.0 (blowfishpro) for KSP 1.1
+	+ Changes
+		- Updated for KSP 1.1
+		- Support variable thrust per transform as in ModuleEngines
 * 2016-0201: 1.15 (blowfishpro) for KSP 1.0.4.
 	+ Changes:
 		- Add some math utils

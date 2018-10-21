@@ -1,5 +1,9 @@
 # Solver Engines :: Change Log
 
+* 2015-0721: 1.8 (NathanKell) for KSP 1.0.4.
+	+ Changelog:
+		- Fix for GUI issues in 1.7.
+		- To avoid the "can't restart engine once propellant is provided again" issue, shutdown and then activate your engine. That will clear its memory of flameouts.
 * 2015-0719: 1.7 (NathanKell) for KSP 1.0.4.
 	+ Changelog
 		- Remove duplicate GUI entries.

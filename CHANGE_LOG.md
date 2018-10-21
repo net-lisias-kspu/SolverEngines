@@ -1,5 +1,9 @@
 # Solver Engines :: Change Log
 
+* 2015-0710: 1.6 (NathanKell) for KSP 1.0.4.
+	+ Finally fix the "can't start when shielded" thing. Activate/toggle was fixed but staging wasn't.
+	+ Improve fitting code.
+	+ Fix version file.
 * 2015-0704: 1.5 (NathanKell) for KSP 1.0.4.
 	+ Changelog:
 		- EngineThermodynamics improvements (docs, track mass flow, allow mixing streams).

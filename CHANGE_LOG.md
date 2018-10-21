@@ -1,5 +1,11 @@
 # Solver Engines :: Change Log
 
+* 2015-0827: 1.10 (NathanKell) for KSP 1.0.4.
+	+ Fix some NREs.
+	+ Fix flickering of FX on burnout.
+	+ Fix error in speed of sound formula; this fixes AJE propellers (with AJE 2.4+)
+	+ Add hook for temperature-based autorestart.
+	+ Make displayed actual throttle display two decimal points.
 * 2015-0729: 1.9 (NathanKell) for KSP 1.0.4.
 	+ Changelog:
 		- Prevent flight GUI button from disappearing.

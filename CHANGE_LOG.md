@@ -1,5 +1,11 @@
 # Solver Engines :: Change Log
 
+* 2016-0201: 1.15 (blowfishpro) for KSP 1.0.4.
+	+ Changes:
+		- Add some math utils
+		- Adjust UpdateFlightCondition to better accommodate simulations
+			- NOTE: this change is backwards-incompatible
+		- Add a generic animation class
 * 2015-1215: 1.14 (blowfishpro) for KSP 1.0.4.
 	+ Minor refactor of engine fitting
 	+ Get rid of debug spam in non Kerbin/Earth atmospheres

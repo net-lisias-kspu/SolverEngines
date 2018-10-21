@@ -1,5 +1,9 @@
 # Solver Engines :: Change Log
 
+* 2015-0719: 1.7 (NathanKell) for KSP 1.0.4.
+	+ Changelog
+		- Remove duplicate GUI entries.
+		- Avoid some NREs.
 * 2015-0710: 1.6 (NathanKell) for KSP 1.0.4.
 	+ Finally fix the "can't start when shielded" thing. Activate/toggle was fixed but staging wasn't.
 	+ Improve fitting code.

@@ -1,5 +1,7 @@
 # Solver Engines :: Change Log
 
+* 2018-0322: 3.6 (blowfishpro) for KSP 1.4.1
+	+ Recompile for KSP 1.4.1
 * 2018-0302: 3.5 (blowfishpro) for KSP 1.3.1
 	+ Engine modules now support `THRUST_TRANSFORM` nodes to allow thrust transforms with multiple names
 		- If present, these will overwrite any other thrust transform setup

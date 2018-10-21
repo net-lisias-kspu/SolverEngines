@@ -1,5 +1,10 @@
 # Solver Engines :: Change Log
 
+* 2015-0704: 1.5 (NathanKell) for KSP 1.0.4.
+	+ Changelog:
+		- EngineThermodynamics improvements (docs, track mass flow, allow mixing streams).
+		- Add functionality to fit an engine's performance parameters to a set of database parameters.
+		- Add SFC as a base solver member (in force/weight-hr).
 * 2015-0625: 1.4 (NathanKell) for KSP 1.0.4.
 	+ Changelog:
 		- Update to KSP 1.0.4.

@@ -1,5 +1,7 @@
 # Solver Engines :: Change Log
 
+* 2017-1023: 3.4 (blowfishpro) for KSP 1.3.1
+	+ Recompile for KSP 1.3.1
 * 2017-0731: 3.3 (blowfishpro) for KSP 1.3
 	+ Recompile for KSP 1.3
 * 2017-0731: 3.2 (blowfishpro) for KSP 1.2.2

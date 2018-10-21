@@ -1,5 +1,7 @@
 # Solver Engines :: Change Log
 
+* 2017-0731: 3.2 (blowfishpro) for KSP 1.2.2
+	+ Fix engines not allowing restart after running out of fuel and then fuel becoming available again
 * 2017-0417: 3.1 (blowfishpro) for KSP 1.2.2
 	+ Fix a bug with engine fitting where results would persist after data was deleted
 	+ Fix normalizedOutput to avoid phantom EC generation

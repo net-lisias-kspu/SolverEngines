@@ -1,5 +1,16 @@
 # Solver Engines :: Change Log
 
+* 2015-0729: 1.9 (NathanKell) for KSP 1.0.4.
+	+ Changelog:
+		- Prevent flight GUI button from disappearing.
+		- Fix flameouts at 0 mass requested.
+		- Fix a math bug.
+		- Add virtuals vFlameout and vUnflameout if a mod wants to override them.
+		- Allow required intake area to be adjusted.
+		- Cut TPR if insufficient intake area.
+		- Auto-unflameout thanks to nimaroth
+		- Fix issue with alternators.
+		- Fix an issue with engine fitting.
 * 2015-0721: 1.8 (NathanKell) for KSP 1.0.4.
 	+ Changelog:
 		- Fix for GUI issues in 1.7.

@@ -1,5 +1,7 @@
 # Solver Engines :: Change Log
 
+* 2016-0701: 2.2 (blowfishpro) for KSP 1.1.3
+	+ Recompile against KSP 1.1.3
 * 2016-0501: 2.1 (NathanKell) for KSP 1.1.2
 	+ Recompile for KSP 1.1.2
 * 2016-0427: 2.0 (blowfishpro) for KSP 1.1

@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
 
 namespace SolverEngines
@@ -11,7 +10,7 @@ namespace SolverEngines
         /// </summary>
         /// <param name="assembly">Assembly to find the version of</param>
         /// <returns>String describing the assembly version</returns>
-        public static Version GetVersion(this Assembly assembly) => assembly.GetName().Version;
+        public static System.Version GetVersion(this Assembly assembly) => assembly.GetName().Version;
 
         /// <summary>
         /// Get an MD5 checksum for a particular assembly

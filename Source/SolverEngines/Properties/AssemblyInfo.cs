@@ -33,6 +33,6 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.3.0.0")] // Don't change until breaking changes occur
-[assembly: AssemblyFileVersion("3.6.2.0")]
+[assembly: AssemblyFileVersion(SolverEngines.Version.Number)]
 
-[assembly: KSPAssembly("SolverEngines", 3, 6, 2)]
+[assembly: KSPAssembly("SolverEngines", SolverEngines.Version.major, SolverEngines.Version.minor, SolverEngines.Version.patch)]

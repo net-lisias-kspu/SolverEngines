@@ -57,6 +57,10 @@
     <Compile Include="SolverMathUtil.cs" />
     <Compile Include="ThrustTransformInfo.cs" />
     <Compile Include="ToolbarWrapper.cs" />
+    <Compile Include="Properties\Version.cs">
+      <DependentUpon>Version.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System">
@@ -71,6 +75,11 @@
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\LIB\managed\1.4.1\UnityEngine.dll</HintPath>
     </Reference>
+  <ItemGroup>
+    <None Include="Properties\Version.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Version.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

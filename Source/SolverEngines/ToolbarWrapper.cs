@@ -255,7 +255,7 @@ namespace SolverEngines {
 		/// <code>
 		/// IButton button = ...
 		/// button.OnClick += (e) => {
-		///     Debug.Log("button clicked, mouseButton: " + e.MouseButton);
+		///     log.info("button clicked, mouseButton: {0}", e.MouseButton);
 		/// };
 		/// </code>
 		/// </example>
@@ -268,7 +268,7 @@ namespace SolverEngines {
 		/// <code>
 		/// IButton button = ...
 		/// button.OnMouseEnter += (e) => {
-		///     Debug.Log("mouse entered button");
+		///     log.info("mouse entered button");
 		/// };
 		/// </code>
 		/// </example>
@@ -281,7 +281,7 @@ namespace SolverEngines {
 		/// <code>
 		/// IButton button = ...
 		/// button.OnMouseLeave += (e) => {
-		///     Debug.Log("mouse left button");
+		///     log.info("mouse left button");
 		/// };
 		/// </code>
 		/// </example>

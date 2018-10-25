@@ -47,7 +47,7 @@ namespace SolverEngines.EnginesGUI
         {
             if (UnitTypeRegistered<T>())
             {
-                Debug.LogWarning("Unit type " + typeof(T).ToString() + " already registered.");
+                Log.warn("Unit type {0} already registered.", typeof(T));
                 return;
             }
 
@@ -63,7 +63,7 @@ namespace SolverEngines.EnginesGUI
         {
             UnitTypeContainer<T> unitType = UnitType<T>();
             if (unitType == null)
-                Debug.LogWarning("Unit type " + typeof(T).ToString() + " has not been registered.  Units " + units.ToString() + " will not be added.");
+                Log.warn("Unit type {0} has not been registered.  Units {1} will not be added.", typeof(T), units);
 
             unitType.AddUnits(units);
         }
@@ -261,7 +261,7 @@ namespace SolverEngines.EnginesGUI
             {
                 if (unitsList.Contains(units))
                 {
-                    Debug.LogWarning("Units " + units.ToString() + " already contained in " + ToString() + "and will not be added");
+                    Log.warn("Units {0} already contained in {1} and will not be added", units, this);
                     return;
                 }
 
@@ -270,12 +270,12 @@ namespace SolverEngines.EnginesGUI
                     if (BaseUnits == null)
                         BaseUnits = units;
                     else
-                        Debug.LogWarning("Units " + units.ToString() + " are base units but " + ToString() + "already has base units " + BaseUnits.ToString());
+                        Log.warn("Units {0} are base units but {1} already has base units {2}", units, this, BaseUnits);
                 }
                 else
                 {
                     if (BaseUnits == null)
-                        Debug.LogWarning("Attempting to add units " + units.ToString() + " but " + ToString() + " does not have base units.");
+                        Log.warn("Attempting to add units {0} but {1} does not have base units.", units, this);
                 }
 
                 unitsList.Add(units);
@@ -302,7 +302,7 @@ namespace SolverEngines.EnginesGUI
                 else
                     if (!UnitsRegistered(defaultUnits))
                     {
-                        Debug.LogWarning("The units \"" + defaultUnits.ToString() + "\" do not exist in" + ToString());
+                        Log.warn("The units \"{0}\" do not exist in {1}", defaultUnits, this);
                         defaultUnits = BaseUnits;
                     }
 
@@ -314,7 +314,7 @@ namespace SolverEngines.EnginesGUI
                     if (units.ConfigName == name)
                         return units;
                 }
-                Debug.LogWarning("The units \"" + name + "\" requested in config do not exist in " + ToString());
+                Log.warn("The units \"{0}\" requested in config do not exist in {1}", name, this);
                 return BaseUnits;
             }
 

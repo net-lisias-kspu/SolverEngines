@@ -73,9 +73,7 @@ namespace SolverEngines.EngineFitting
         /// </summary>
         public static void SaveDatabase()
         {
-#if DEBUG
-            Debug.Log("[SolverEngines] Saving engine database");
-#endif
+            Log.dbg("Saving engine database");
             string dirName = System.IO.Path.GetDirectoryName(configPath);
             if (!System.IO.Directory.Exists(dirName))
                 System.IO.Directory.CreateDirectory(dirName);

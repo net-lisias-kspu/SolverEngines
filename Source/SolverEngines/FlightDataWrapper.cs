@@ -95,7 +95,7 @@ namespace SolverEngines
             }
             else if (haveFAR)
             {
-                Debug.LogWarning("FAR was found but some of its methods are null.  How did this happen?");
+                Log.warn("FAR was found but some of its methods are null.  How did this happen?");
                 return 0d;
             }
             else

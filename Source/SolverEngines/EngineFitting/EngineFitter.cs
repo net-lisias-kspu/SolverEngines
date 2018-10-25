@@ -57,7 +57,7 @@ namespace SolverEngines.EngineFitting
                 }
                 if (!doFit)
                 {
-                    Debug.Log("[" + engine.EngineTypeName + "] Reading engine params from cache for engine " + engine.EnginePartName);
+                    Log.info("[{0}] Reading engine params from cache for engine {1}", engine.EngineTypeName, engine.EnginePartName);
 
                     foreach (EngineParameterInfo entry in engineFitParameters)
                     {
@@ -71,7 +71,7 @@ namespace SolverEngines.EngineFitting
 
             if (!doFit) return;
 
-            Debug.Log("[" + engine.EngineTypeName + "] Fitting params for engine " + engine.EnginePartName);
+            Log.info("[{0}] Fitting params for engine {1}", engine.EngineTypeName, engine.EnginePartName);
 
             // Make sure everything has the correct value
             engine.PushFitParamsToSolver();
@@ -86,9 +86,7 @@ namespace SolverEngines.EngineFitting
 
             if (saveToDatabase)
             {
-#if DEBUG
-                Debug.Log("Saving fitted engine parameters to database");
-#endif
+                Log.dbg("Saving fitted engine parameters to database");
                 EngineDatabase.SetNodeForEngine(engine, newNode);
             }
         }

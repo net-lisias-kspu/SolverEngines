@@ -39,7 +39,7 @@ namespace SolverEngines.EnginesGUI
             else
                 GameEvents.onGUIApplicationLauncherReady.Add(CreateToolbarButtonStock);
 
-            Debug.Log("Toolbar manager available: " + ToolbarManager.ToolbarAvailable.ToString());
+            Log.info("Toolbar manager available: {0}" + ToolbarManager.ToolbarAvailable);
 
         }
 

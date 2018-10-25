@@ -325,7 +325,7 @@ namespace SolverEngines
 
             // Rho = v.atmDensity;
             //if (Math.Abs(v.atmDensity / Rho - 1d) > 0.01d)
-            //    Debug.LogWarning("Ambient density does not obey the gas law for vessel " + v.name);
+            //    log.warn("Ambient density does not obey the gas law for vessel {0}", v.name);
         }
 
         /// <summary>
@@ -343,9 +343,9 @@ namespace SolverEngines
 
             //if (Math.Abs(FlightGlobals.getAtmDensity(P, T, body) / Rho - 1d) > 0.01d)
             //    if (body != null)
-            //        Debug.LogWarning("Ambient density does not obey the gas law on body " + body.name + " at altitude " + altitude.ToString());
+            //        log.warn("Ambient density does not obey the gas law on body {0} at altitude {1}", body.name, altitude);
             //    else
-            //        Debug.LogWarning("Ambient density does not obey the gas law on body at altitude " + altitude.ToString());
+            //        log.warn("Ambient density does not obey the gas law on body at altitude {0}", altitude);
         }
 
         /// <summary>
@@ -363,9 +363,9 @@ namespace SolverEngines
 
             //if (Math.Abs(FlightGlobals.getAtmDensity(P, T, body) / Rho - 1d) > 0.01d)
             //    if (body != null)
-            //        Debug.LogWarning("Ambient density does not obey the gas law on body " + body.name + " at position " + position.ToString());
+            //        log.warn(("Ambient density does not obey the gas law on body {0} at position {1}", body.name, position);
             //    else
-            //        Debug.LogWarning("Ambient density does not obey the gas law on body at position " + position.ToString());
+            //        log.warn(("Ambient density does not obey the gas law on body at position {0}", position);
         }
 
         /// <summary>
@@ -431,7 +431,7 @@ namespace SolverEngines
             double csq = Gamma * R * T - 0.5 * (Gamma - 1d) * velocity * velocity;
             if (csq <= 0.0)
             {
-                Debug.LogWarning("[" + this.GetType().Name + "] Got a velocity which is too large for this isentropic flow.  Stack trace: \n" + System.Environment.StackTrace);
+                Log.warn("[{0}] Got a velocity which is too large for this isentropic flow.  Stack trace: {1}\n", this.GetType().Name, System.Environment.StackTrace);
                 return 0d;
             }
             return Math.Sqrt(csq);

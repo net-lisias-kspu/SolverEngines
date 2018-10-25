@@ -147,7 +147,7 @@ namespace SolverEngines
                     }
                     catch (Exception e)
                     {
-                        Debug.LogError($"[{GetType().Name}] exception while attempting to parse THRUST_TRANSFORM: {e}");
+                        Log.error(e, "[{0}] exception while attempting to parse THRUST_TRANSFORM: {1}", GetType().Name, e.Message);
                     }
                 }
             }
@@ -176,7 +176,7 @@ namespace SolverEngines
 
                 if (prefabModule == null)
                 {
-                    Debug.LogError($"[{GetType().Name}] unable to find prefab module");
+                    Log.error("[{0}] unable to find prefab module", GetType().Name);
                     return;
                 }
 
@@ -195,13 +195,13 @@ namespace SolverEngines
 
                 if (transforms.Length == 0)
                 {
-                    Debug.LogError($"[{GetType().Name}] no transforms named {info.transformName} found");
+                    Log.error("[{0}] no transforms named {1} found", GetType().Name, info.transformName);
                     continue;
                 }
 
                 if (info.multipliers != null && transforms.Length != info.multipliers.Length)
                 {
-                    Debug.LogError($"[{GetType().Name}] found {transforms.Length} transforms named {info.transformName} but got {info.multipliers.Length} multipliers");
+                    Log.error("[{0}] found {1} transforms named {2} but got {3} multipliers", GetType().Name, transforms.Length, info.transformName, info.multipliers.Length);
                     continue;
                 }
 
@@ -315,7 +315,7 @@ namespace SolverEngines
         {
             if (engineSolver == null)
             {
-                Debug.Log("*ERROR* EngineSolver on this part is null!");
+                Log.error("EngineSolver on this part is null!");
                 return;
             }
 

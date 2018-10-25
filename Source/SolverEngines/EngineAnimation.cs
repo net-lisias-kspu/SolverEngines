@@ -62,7 +62,7 @@ namespace SolverEngines
         {
             Animation[] anims = part.FindModelAnimators(name);
             if (anims.Length == 0)
-                Debug.LogError("Error: Cannot find animation named '" + name + "' on part " + part.name);
+                Log.error("Cannot find animation named '{0}' on part {1}", name, part.name);
 
             return anims;
         }
@@ -174,7 +174,7 @@ namespace SolverEngines
                 str += " on part " + part.partInfo.name;
             str += ": ";
             str += message;
-            Debug.LogError(str);
+            Log.error(str);
         }
 
         #endregion

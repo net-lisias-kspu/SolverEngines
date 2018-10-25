@@ -147,7 +147,7 @@ namespace SolverEngines
             else
             {
                 if (inletDescription != null && inletDescription.Length > 0)
-                    Debug.LogWarning("AJEInlet on part " + part.name + " has inletDescription but no inletTitle.  inletDescription will not be displayed.");
+                    Log.warn("AJEInlet on part {0} has inletDescription but no inletTitle.  inletDescription will not be displayed.", part.name);
             }
 
             output += "<b>Intake Resource: </b>" + resourceName + "\n";

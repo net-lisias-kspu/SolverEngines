@@ -27,10 +27,10 @@ namespace SolverEngines
 
             for (int i = 0; i < AssemblyLoader.loadedAssemblies.Count; i++)
             {
-                var assembly = AssemblyLoader.loadedAssemblies[i];
+				AssemblyLoader.LoadedAssembly assembly = AssemblyLoader.loadedAssemblies[i];
                 if (assembly.name == "FerramAerospaceResearch")
                 {
-                    var types = assembly.assembly.GetExportedTypes();
+					Type[] types = assembly.assembly.GetExportedTypes();
                     for (int j = 0; j < types.Length; j++)
                     {
                         Type t = types[j];
@@ -47,7 +47,7 @@ namespace SolverEngines
 
             if (haveFAR)
             {
-                foreach (var method in FARAPI.GetMethods(BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public))
+                foreach (MethodInfo method in FARAPI.GetMethods(BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public))
                 {
                     if (method.Name == "VesselDynPres")
                         FARVesselDynPres = method;
@@ -77,7 +77,7 @@ namespace SolverEngines
         {
             if (haveFAR && FARVesselDynPres != null)
             {
-                var arg = new object[] { vessel };
+				object[] arg = new object[] { vessel };
                 return (double)FARVesselDynPres.Invoke(null, arg);
             }
             else
@@ -90,7 +90,7 @@ namespace SolverEngines
         {
             if (haveFAR && FARVesselDynPres != null && FARVesselRefArea != null && FARVesselLiftCoeff != null)
             {
-                var arg = new object[] { vessel };
+				object[] arg = new object[] { vessel };
                 return (double)FARVesselDynPres.Invoke(null, arg) * (double)FARVesselRefArea.Invoke(null, arg) * (double)FARVesselDragCoeff.Invoke(null, arg);
             }
             else if (haveFAR)

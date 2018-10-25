@@ -13,9 +13,9 @@ namespace SolverEngines
         public static string FileHash(string filename)
         {
             byte[] hash = null;
-            using (var md5 = System.Security.Cryptography.MD5.Create())
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
             {
-                using (var stream = File.OpenRead(filename))
+                using (FileStream stream = File.OpenRead(filename))
                 {
                     hash = md5.ComputeHash(stream);
                 }

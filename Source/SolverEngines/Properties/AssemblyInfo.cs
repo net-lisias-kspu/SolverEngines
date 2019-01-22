@@ -36,4 +36,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion(SolverEngines.Version.Number)]
 
 [assembly: KSPAssembly("SolverEngines", SolverEngines.Version.major, SolverEngines.Version.minor, SolverEngines.Version.patch)]
-[assembly: KSPAssemblyDependency("KSPe", 2, 0)]
+[assembly: KSPAssemblyDependency("KSPe", 2, 1)]

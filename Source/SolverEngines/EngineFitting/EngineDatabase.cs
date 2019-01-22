@@ -20,9 +20,6 @@ namespace SolverEngines.EngineFitting
 
             private void OnDestroy()
             {
-                if (database == null)
-                    return;
-
                 SaveDatabase();
             }
         }
@@ -33,9 +30,7 @@ namespace SolverEngines.EngineFitting
         public static readonly string SolverEnginesVersion = SolverEnginesAssembly.GetVersion().ToString();
         public static readonly string SolverEnginesAssemblyChecksum = SolverEnginesAssembly.GetChecksum();
 
-        private static readonly string configPath = FileUtil.JoinPath(SolverEnginesAssembly.GetDirectory(), "PluginData", "SolverEngines", "EngineDatabase.cfg");
-        private static readonly string databaseName = "SolverEnginesDatabase";
-        private static ConfigNode database = null;
+        private static readonly KSPe.IO.Data.ConfigNode DATABASE = KSPe.IO.Data.ConfigNode.ForType<EngineFitData>("SolverEnginesDatabase", "EngineDatabase.cfg");
 
         private static AssemblyChecksumCache checksumCache = new AssemblyChecksumCache();
 
@@ -61,11 +56,7 @@ namespace SolverEngines.EngineFitting
         /// </summary>
         public static void LoadDatabase()
         {
-            ConfigNode node = ConfigNode.Load(configPath);
-            if (node != null)
-                database = node.GetNode(databaseName);
-            if (database == null)
-                database = new ConfigNode(databaseName);
+            if (DATABASE.IsLoadable) DATABASE.Load();
         }
 
         /// <summary>
@@ -74,12 +65,7 @@ namespace SolverEngines.EngineFitting
         public static void SaveDatabase()
         {
             Log.dbg("Saving engine database");
-            string dirName = System.IO.Path.GetDirectoryName(configPath);
-            if (!System.IO.Directory.Exists(dirName))
-                System.IO.Directory.CreateDirectory(dirName);
-            ConfigNode saveNode = new ConfigNode();
-            saveNode.AddNode(database);
-            saveNode.Save(configPath);
+			DATABASE.Save();
         }
 
         /// <summary>
@@ -93,7 +79,7 @@ namespace SolverEngines.EngineFitting
             string engineType = engine.EngineTypeName;
             string engineID = engine.EngineID;
 
-            ConfigNode partNode = database.GetNode(partName);
+            ConfigNode partNode = DATABASE.Node.GetNode(partName);
             if (partNode != null)
             {
                 foreach (ConfigNode moduleNode in partNode.GetNodes(engineType))
@@ -125,7 +111,7 @@ namespace SolverEngines.EngineFitting
             node.SetValue("SolverEnginesVersion", SolverEnginesVersion, true);
             node.SetValue("SolverEnginesAssemblyChecksum", SolverEnginesAssemblyChecksum, true);
 
-            ConfigNode partNode = database.GetNode(partName);
+            ConfigNode partNode = DATABASE.Node.GetNode(partName);
             int nodeIndex = 0;
 
             if (partNode != null)
@@ -143,7 +129,7 @@ namespace SolverEngines.EngineFitting
             else
             {
                 partNode = new ConfigNode(partName);
-                database.AddNode(partNode);
+                DATABASE.Node.AddNode(partNode);
                 nodeIndex = 0;
             }
 
